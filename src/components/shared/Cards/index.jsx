@@ -1,0 +1,37 @@
+const Cards = ({
+  className,
+  name,
+  amount,
+  interestRate,
+  maintenance,
+  adminFee,
+}) => {
+
+  return (
+    <>
+      <div
+       
+        className={`grid grid-cols-2  text-white w-[20rem] h-[13rem] p-[2rem] rounded-xl drop-shadow-xl bg-greyTwo cursor-pointer`}
+      >
+        <div className="flex flex-col gap-y-[0.2rem] justify-center items-center border-r border-b border-gray-300">
+          <h1 className="text-grey-500 ">{name}</h1>
+          <p className="text-[0.8rem]"> &#8358; {amount}</p>
+        </div>
+        <div className="flex flex-col gap-y-[0.2rem] justify-center items-center border-b border-gray-300">
+          <h2>Interest Rate</h2>
+          <p className="text-grey-500 ">&#8358; {interestRate}</p>
+        </div>
+        <div className="flex flex-col gap-y-[0.2rem] justify-center items-center border-r border-gray-300">
+          <h3>Maintenance</h3>
+          <p className="text-grey-500 ">&#8358; {maintenance}</p>
+        </div>
+        <div className="flex flex-col gap-y-[0.2rem] justify-center items-center">
+          <h4>Admin Fee</h4>
+          <p className="text-grey-500 ">&#8358; {adminFee}</p>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Cards;
