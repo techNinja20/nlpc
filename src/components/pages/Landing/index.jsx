@@ -23,19 +23,18 @@ const Landing = () => {
         </button>
 
         <div
-          // className="flex items-center "
           className={`${
             isOpen ? "block " : "hidden"
           } w-full lg:flex md:flex lg:items-center md:items-center md:w-auto lg:gap-x-2 md:gap-x-2 lg:w-auto sm:space-y-[2rem] `}
         >
           <Link to="/auth/sign-up">
-            <Button text="Sign Up" className="bg-lightgreen block w-[10rem]" />
+            <Button text="Sign Up" className="bg-lightgreen block w-[10rem] mt-[2rem]" />
           </Link>
           <Link to="/auth/login">
-            <Button text="Login" className="block" />
+            <Button text="Login" className="block mt-[2rem]" />
           </Link>
           <Link to="/count">
-            <Button text="Redux" className="bg-yellow block" />
+            <Button text="Redux" className="bg-yellow block mt-[2rem]" />
           </Link>
         </div>
       </nav>

@@ -10,8 +10,7 @@ const Cards = ({
   return (
     <>
       <div
-       
-        className={`grid grid-cols-2  text-white w-[20rem] h-[13rem] p-[2rem] rounded-xl drop-shadow-xl bg-greyTwo cursor-pointer`}
+        className={`grid grid-cols-2  text-white w-[20rem] md:w-[18rem] sm:w-[19rem] h-[13rem] p-[2rem] rounded-xl drop-shadow-xl bg-greyTwo cursor-pointer`}
       >
         <div className="flex flex-col gap-y-[0.2rem] justify-center items-center border-r border-b border-gray-300">
           <h1 className="text-grey-500 ">{name}</h1>

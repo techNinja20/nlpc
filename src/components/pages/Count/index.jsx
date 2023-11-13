@@ -8,7 +8,7 @@ const Count = () => {
 
   return (
     <div className="bg-grey flex items-center justify-center w-full h-screen">
-      <div className="w-[30rem] h-[15rem] rounded-lg drop-shadow-lg bg-white flex flex-col items-center justify-center gap-y-[1rem] px-[4rem] ">
+      <div className="w-[30rem] sm:w-[25rem] h-[15rem] rounded-lg drop-shadow-lg bg-white flex flex-col items-center justify-center gap-y-[1rem] px-[4rem] ">
         <div className="w-[5rem] ">
           <img src={reduxLogo} alt="reduxLogo" />
         </div>
