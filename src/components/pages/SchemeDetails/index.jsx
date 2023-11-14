@@ -10,8 +10,8 @@ const SchemeDetails = () => {
   return (
     <div className="bg-grey flex items-center justify-center font-domine w-full h-screen">
       <div className="bg-lightblack text-white flex flex-col gap-y-4 items-center justify-center  w-[35rem] sm:w-[25rem] h-[25rem] rounded-[0.8rem] shadow-2xl ">
-        <div className="flex justify-between w-[30rem] ">
-          <div className="space-y-5 border-r ">
+        <div className="flex sm:flex-col sm:gap-y-[1rem] justify-between w-[30rem] sm:w-[23rem] ">
+          <div className="space-y-5 border-r sm:border-none ">
             <h1>
               <span className="font-bold">Name:</span> {datas.name}
             </h1>
@@ -31,7 +31,7 @@ const SchemeDetails = () => {
               {datas.adminFee}
             </h5>
           </div>
-          <div className=" flex text- font-bold w-[20rem] items-center justify-center gap-x-[0.7rem] ">
+          <div className=" flex text-center font-bold w-[20rem] items-center justify-center gap-x-[0.7rem] ">
             {datas.amount}{" "}
             <FaTimes className="text-lightgreen font-bold" />{" "}
             {datas.interestRate}{" "}

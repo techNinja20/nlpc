@@ -9,7 +9,7 @@ const Landing = () => {
    const [isOpen, setIsOpen] = useState(false);
   return (
     <div className=" w-full h-screen">
-      <nav className="flex items-center justify-between w-full py-[0.5rem] px-[5rem] md:px-[1rem] sm:px-[1rem] flex-wrap">
+      <nav className="flex items-center justify-between w-full  py-[0.5rem] px-[5rem] md:px-[1rem] sm:px-[1rem] flex-wrap">
         <div className="w-[10rem] ">
           <img src={logo} alt="logo" />
         </div>
@@ -25,9 +25,9 @@ const Landing = () => {
         <div
           className={`${
             isOpen ? "block " : "hidden"
-          } w-full lg:flex md:flex lg:items-center md:items-center md:w-auto lg:gap-x-2 md:gap-x-2 lg:w-auto sm:space-y-[2rem] `}
+          } w-full lg:flex md:flex  lg:items-center md:items-center md:w-auto lg:gap-x-2 md:gap-x-2 lg:w-auto sm:space-y-[2rem] `}
         >
-          <Link to="/auth/sign-up">
+          <Link to="/auth/sign-up"  >
             <Button text="Sign Up" className="bg-lightgreen block w-[10rem] mt-[2rem]" />
           </Link>
           <Link to="/auth/login">
