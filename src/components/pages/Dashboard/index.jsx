@@ -22,7 +22,7 @@ const Dashboard = () => {
 
         <div className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-y-[1rem]">
           {schemeInfos.map((scheme, i) => (
-            <Cards key={i} {...scheme} />
+            <Cards key={i} {...scheme} index={`/Scheme-details/${i}`} />
           ))}
         </div>
 

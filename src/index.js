@@ -14,6 +14,7 @@ import GlobalContext from "./components/shared/Context";
 import { Provider } from "react-redux";
 import store from "../src/components/redux/store";
 import Count from "./components/pages/Count";
+import SchemeDetails from "./components/pages/SchemeDetails";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/count",
     element: <Count />,
+  },
+  {
+    path: "/Scheme-details/:id",
+    element: <SchemeDetails />,
   },
   {
     path: "/*",

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Cards = ({
   className,
   name,
@@ -5,12 +7,13 @@ const Cards = ({
   interestRate,
   maintenance,
   adminFee,
+  index,
 }) => {
-
   return (
     <>
-      <div
-        className={`grid grid-cols-2  text-white w-[20rem] md:w-[18rem] sm:w-[19rem] h-[13rem] p-[2rem] rounded-xl drop-shadow-xl bg-greyTwo cursor-pointer`}
+      <Link
+        to={index}
+        className={`grid grid-cols-2  text-white w-[17rem] md:w-[18rem] sm:w-[19rem] h-[13rem] p-[2rem] rounded-xl drop-shadow-xl bg-greyTwo `}
       >
         <div className="flex flex-col gap-y-[0.2rem] justify-center items-center border-r border-b border-gray-300">
           <h1 className="text-grey-500 ">{name}</h1>
@@ -28,7 +31,7 @@ const Cards = ({
           <h4>Admin Fee</h4>
           <p className="text-grey-500 ">&#8358; {adminFee}</p>
         </div>
-      </div>
+      </Link>
     </>
   );
 };

@@ -4,8 +4,10 @@ import Button from "../../shared/Button";
 import OtpInput from "react-otp-input";
 import {  useNavigate } from "react-router-dom";
 import { Toast } from "../../shared/Toastify/toast";
+import { useDatas } from "../../shared/Context";
 
 const Otp = () => {
+  const { firstname } = useDatas()
   const [otp, setOtp] = useState("");
 
   const navigate = useNavigate()
@@ -21,7 +23,7 @@ const Otp = () => {
           <img src={logo} alt="logo" />
         </div>
         <h1 className="text-center w-[20rem] ">
-          Hi Olawale, Kindly check your email/ phone for otp verification
+          Hi {firstname}, Kindly check your email/ phone for otp verification
         </h1>
         <form>
           <div className="space-y-6  ">
