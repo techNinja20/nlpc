@@ -1,13 +1,13 @@
-import { AiFillSetting } from "react-icons/ai";
-import { PiPowerFill } from "react-icons/pi";
-import { RiProfileFill, RiDashboardFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
-import logo from "../../../../assets/images/logo.png";
-import logoTwo from "../../../../assets/images/logoTwo.png";
-import { useDatas } from "../../Context";
+import { AiFillSetting } from "react-icons/ai"
+import { PiPowerFill } from "react-icons/pi"
+import { RiProfileFill, RiDashboardFill } from "react-icons/ri"
+import { Link } from "react-router-dom"
+import logo from "../../../../assets/images/logo.png"
+import logoTwo from "../../../../assets/images/logoTwo.png"
+import { useDatas } from "../../Context"
 
 const SideBar = () => {
-  const { firstname, lastname, email } = useDatas();
+  const { firstname, lastname, email } = useDatas()
   return (
     <div className="flex flex-col items-center gap-y-[5rem] bg-darkgreen opacity-90 w-[19%] md:w-[23%] min-h-screen ">
       <div className="w-[10rem] sm:w-[3rem] mt-[2rem] mx-auto ">
@@ -23,7 +23,7 @@ const SideBar = () => {
         </div>
         <h2 className="text-center sm:hidden">
           {firstname.toUpperCase() || email.replace(/@.*/, "").toUpperCase()}
-          {lastname}
+          {lastname.toUpperCase()}
         </h2>
       </div>
 
@@ -46,7 +46,7 @@ const SideBar = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SideBar;
+export default SideBar

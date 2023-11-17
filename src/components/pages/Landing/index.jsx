@@ -33,9 +33,6 @@ const Landing = () => {
           <Link to="/auth/login">
             <Button text="Login" className="block mt-[2rem]" />
           </Link>
-          <Link to="/count">
-            <Button text="Redux" className="bg-yellow block mt-[2rem]" />
-          </Link>
         </div>
       </nav>
       <img src={banner} alt="banner" />

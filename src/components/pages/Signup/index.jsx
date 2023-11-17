@@ -1,30 +1,31 @@
-import logo from "../../../assets/images/logo.png";
-import Label from "../../shared/Label/index";
-import Button from "../../shared/Button";
-import { useState } from "react";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
-import { useDatas, useOnChange } from "../../shared/Context";
-import { Toast } from "../../shared/Toastify/toast";
+import logo from "../../../assets/images/logo.png"
+import Label from "../../shared/Label/index"
+import Button from "../../shared/Button"
+import { useState } from "react"
+import { FaEyeSlash, FaEye } from "react-icons/fa"
+import { Link, useNavigate } from "react-router-dom"
+import { useDatas, useOnChange } from "../../shared/Context"
+import { Toast } from "../../shared/Toastify/toast"
+import Input from "../../shared/Input"
 
 const Signup = () => {
   const { firstname, lastname, email, phone, password, confirmpassword } =
-    useDatas();
-  const onChange = useOnChange();
-  const navigate = useNavigate();
+    useDatas()
+  const onChange = useOnChange()
+  const navigate = useNavigate()
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   function togglePassword() {
-    setShowPassword((isPasswordShown) => !isPasswordShown);
+    setShowPassword((isPasswordShown) => !isPasswordShown)
   }
   function toggleConfirmPassword() {
-    setShowConfirmPassword((isPasswordConfirmShown) => !isPasswordConfirmShown);
+    setShowConfirmPassword((isPasswordConfirmShown) => !isPasswordConfirmShown)
   }
   function submit(e) {
     try {
-      e.preventDefault();
+      e.preventDefault()
       if (
         !firstname ||
         !lastname ||
@@ -34,11 +35,11 @@ const Signup = () => {
         !confirmpassword ||
         password !== confirmpassword
       ) {
-        throw new Error("All the fields are compulsory");
+        throw new Error("All the fields are compulsory")
       }
-      navigate("/auth/otp");
+      navigate("/auth/otp")
     } catch (error) {
-      Toast("All the fields are compulsory" || error , "error");
+      Toast("All the fields are compulsory" || error, "error")
     }
   }
 
@@ -52,58 +53,53 @@ const Signup = () => {
           <div className="space-y-4  ">
             <div>
               <Label labelValue="First name" />
-              <input
+              <Input
                 name="firstname"
                 value={firstname}
                 onChange={onChange}
                 type="text"
                 placeholder="ex. Olawale"
-                className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
               />
             </div>
             <div>
               <Label labelValue="Last name" />
-              <input
+              <Input
                 name="lastname"
                 value={lastname}
                 onChange={onChange}
                 type="text"
                 placeholder="ex. Olupo"
-                className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
               />
             </div>
             <div>
               <Label labelValue="Email" />
-              <input
+              <Input
                 name="email"
                 value={email}
                 onChange={onChange}
                 type="email"
                 placeholder="my@email.com"
-                className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
               />
             </div>
             <div>
               <Label labelValue="Phone number" />
-              <input
+              <Input
                 name="phone"
                 value={phone}
                 onChange={onChange}
                 type="text"
                 placeholder="ex. 08177333492"
-                className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
               />
             </div>
             <div>
               <Label labelValue="Password" />
               <div className="relative flex ">
-                <input
+                <Input
                   name="password"
                   value={password}
                   onChange={onChange}
                   placeholder="*********"
                   type={showPassword ? "text" : "password"}
-                  className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
                 />
                 <div
                   className="absolute top-[0.8rem] right-[0.5rem]  cursor-pointer"
@@ -119,20 +115,20 @@ const Signup = () => {
             </div>
             <div>
               <Label labelValue="Confirm Password" />
+
               <div className="relative flex ">
-                <input
+                <Input
                   name="confirmpassword"
                   value={confirmpassword}
                   onChange={onChange}
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="*********"
-                  className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
                 />
                 <div
                   className="absolute top-[0.8rem] right-[0.5rem]  cursor-pointer"
                   onClick={toggleConfirmPassword}
                 >
-                  {showPassword ? (
+                  {showConfirmPassword ? (
                     <FaEye className="text-green" />
                   ) : (
                     <FaEyeSlash className="text-green" />
@@ -157,7 +153,7 @@ const Signup = () => {
         </h1>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup

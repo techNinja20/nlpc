@@ -1,23 +1,26 @@
-import { PaystackButton } from "react-paystack";
-import { Toast } from "../Toastify/toast";
-import { useState } from "react";
-import {useDatas} from '../Context'
+import { PaystackButton } from "react-paystack"
+import { Toast } from "../Toastify/toast"
+import { useDatas, useOnChange } from "../Context"
+import Input from "../Input"
 
-const PayButton = ({ text, icon, openModal }) => {
-  const {email} =useDatas()
-  const [amount, setAmount] = useState("");
+const PayButton = ({ openModal }) => {
+  const { email,  amount} = useDatas()
+  const onchange = useOnChange()
 
   function handleOpenModal(e) {
-    e.target.id === "modal" && openModal();
+    e.target.id === "modal" && openModal()
   }
 
   function submit(e) {
-    e.preventDefault();
+    e.preventDefault()
   }
 
-  const publicKey = process.env.REACT_APP_PK_KEY;
+  const publicKey = process.env.REACT_APP_PK_KEY
 
-  const handlePaystackSuccessAction = () => {};
+  const handlePaystackSuccessAction = () => {
+    Toast("Payment Successful.", "success")
+    
+  }
 
   const componentProps = {
     email: email,
@@ -26,7 +29,7 @@ const PayButton = ({ text, icon, openModal }) => {
     text: "Fund ",
     onSuccess: () => handlePaystackSuccessAction(),
     onClose: () => Toast("Payment canceled by user.", "warning"),
-  };
+  }
 
   return (
     <>
@@ -36,29 +39,30 @@ const PayButton = ({ text, icon, openModal }) => {
         className=" fixed inset-0 bg-black bg-opacity-60 text-[#25313CA6]  flex justify-center items-center w-full z-10"
       >
         <div className="bg-white w-[30rem] sm:w-[25rem] h-[15rem] rounded-lg drop-shadow-lg flex flex-col items-center justify-center ">
-          <form onSubmit={submit}>
+          <form onSubmit={submit} className="space-y-4">
             <input
               type="email"
               placeholder="email"
               value={email}
               className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
             />
-            <input
+            <Input
               type="text"
+              name="amount"
               placeholder="amount"
               value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] mt-[2rem] outline-none block`}
+              onChange={onchange}
             />
             <PaystackButton
               {...componentProps}
               className={`bg-green text-white text-center py-[0.5rem] px-[1rem] rounded-[0.5rem] mt-[2rem] hover:opacity-90`}
+        
             />
           </form>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PayButton;
+export default PayButton

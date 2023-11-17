@@ -1,38 +1,38 @@
-import logo from "../../../assets/images/logo.png";
-import Label from "../../shared/Label/index";
-import Button from "../../shared/Button";
-import { useState } from "react";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
-import { useDatas, useOnChange } from "../../shared/Context";
-import { Toast } from "../../shared/Toastify/toast";
+import logo from "../../../assets/images/logo.png"
+import Label from "../../shared/Label/index"
+import Button from "../../shared/Button"
+import { useState } from "react"
+import { FaEyeSlash, FaEye } from "react-icons/fa"
+import { Link, useNavigate } from "react-router-dom"
+import { useDatas, useOnChange } from "../../shared/Context"
+import { Toast } from "../../shared/Toastify/toast"
+import Input from "../../shared/Input"
 
 const Login = () => {
-  const Datas = useDatas();
-  const onChange = useOnChange();
+  const Datas = useDatas()
+  const onChange = useOnChange()
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
 
   function togglePassword() {
-    setShowPassword((isPasswordShown) => !isPasswordShown);
+    setShowPassword((isPasswordShown) => !isPasswordShown)
   }
 
   function handleLogin(e) {
     try {
-      e.preventDefault();
-      if (!Datas.email || !Datas.password) {
-        throw new Error("All the fields are compulsory");
-      } 
-        navigate("/dashboard");
-        Toast(
-          `Welcome ${Datas.firstname || Datas.email.replace(/@.*/, "")} `,
-          "success"
-        );
-      
+      e.preventDefault()
+      if (!Datas.email || !Datas.password ) {
+        throw new Error("All the fields are compulsory")
+      }
+      navigate("/dashboard")
+      Toast(
+        `Welcome ${Datas.firstname || Datas.email.replace(/@.*/, "")} `,
+        "success"
+      )
     } catch (error) {
-      Toast("Provide necessary fields" || error, "error");
+      Toast("Provide necessary fields" || error, "error")
     }
   }
 
@@ -46,24 +46,22 @@ const Login = () => {
           <div className="space-y-4  ">
             <div>
               <Label labelValue="email" />
-              <input
+              <Input
                 name="email"
                 value={Datas.email}
                 onChange={onChange}
-                type="text"
+                type="email"
                 placeholder="my@email.com"
-                className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
               />
             </div>
             <div>
               <Label labelValue="password" />
               <div className="relative flex ">
-                <input
+                <Input
                   name="password"
                   value={Datas.password}
                   onChange={onChange}
                   type={showPassword ? "text" : "password"}
-                  className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
                 />
                 <div
                   className="absolute top-[0.8rem] right-[0.5rem]  cursor-pointer"
@@ -92,7 +90,7 @@ const Login = () => {
         </h1>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

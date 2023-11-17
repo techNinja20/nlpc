@@ -2,50 +2,51 @@ import { FaExclamation } from "react-icons/fa";
 import { GiCheckMark } from "react-icons/gi";
 import { MdOutlineQuestionMark } from "react-icons/md";
 
-export const accountDetail = {
-  balance: "40000",
-  savings: "10000",
-}
-
 export const schemeInfos = [
   {
     name: "Coca Cola",
-    amount: 10000,
+    minAmount: 10000,
+    maxAmount: 25000,
     interestRate: 50,
     maintenance: 500,
     adminFee: 300,
   },
   {
     name: "Amazon",
-    amount: 3000,
+    minAmount: 3000,
+    maxAmount: 6000,
     interestRate: 20,
     maintenance: 200,
     adminFee: 100,
   },
   {
     name: "Dangote",
-    amount: 2000,
+    minAmount: 2000,
+    maxAmount: 5000,
     interestRate: 10,
     maintenance: 250,
     adminFee: 50,
   },
   {
     name: "Oando",
-    amount: 9000,
+    minAmount: 9000,
+    maxAmount: 14500,
     interestRate: 80,
     maintenance: 700,
     adminFee: 190,
   },
   {
     name: "Tesla",
-    amount: 7000,
+    minAmount: 7000,
+    maxAmount: 16000,
     interestRate: 25,
     maintenance: 450,
     adminFee: 100,
   },
   {
     name: "Real Estate",
-    amount: 8500,
+    minAmount: 8500,
+    maxAmount: 20000,
     interestRate: 60,
     maintenance: 320,
     adminFee: 310,
