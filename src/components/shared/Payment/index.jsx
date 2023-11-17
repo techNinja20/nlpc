@@ -2,6 +2,7 @@ import { PaystackButton } from "react-paystack"
 import { Toast } from "../Toastify/toast"
 import { useDatas, useOnChange } from "../Context"
 import Input from "../Input"
+import { useState } from "react"
 
 const PayButton = ({ openModal }) => {
   const { email,  amount} = useDatas()
@@ -44,6 +45,8 @@ const PayButton = ({ openModal }) => {
               type="email"
               placeholder="email"
               value={email}
+              onChange={onchange}
+              name="email"
               className={` w-[25rem] sm:w-[23rem] py-[0.5rem] px-[0.8rem] border rounded-[0.5rem] outline-none block`}
             />
             <Input
