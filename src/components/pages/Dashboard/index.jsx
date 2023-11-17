@@ -16,7 +16,7 @@ const Dashboard = () => {
     <Container>
       <div className="bg-grey text-black w-[81%] pt-[5rem] px-[1rem]  pb-[5rem] space-y-[2rem] ">
         <div className="text-[1.5rem] text-lightgreen border-b border-green  pb-4 ">
-          <h1>Interests Bought</h1>
+          <h1>Shares Bought</h1>
           <div className="grid grid-cols-2 sm:grid-cols-1 gap-[2rem]" >
           {
             pushIn.length === 0 ? <Empty/> :             
