@@ -33,9 +33,7 @@ const SchemeDetails = () => {
     e.preventDefault()
     if (startDate > endDate) {
       Toast("Please provide correct date", "warning")
-    } else if (amountInput > amount) {
-      Toast("Insufficient wallet balance", "error")
-    } else if (
+    }else if (
       amountInput < schemeData.minAmount ||
       amountInput > schemeData.maxAmount
     ) {
@@ -43,6 +41,9 @@ const SchemeDetails = () => {
         `You can only buy shares within #${schemeData.minAmount} to #${schemeData.maxAmount}`,
         "info"
       )
+    } 
+    else if (amountInput > amount) {
+      Toast("Insufficient wallet balance", "error")
     } else if (!amountInput || !startDate || !endDate) {
       Toast("All fields must be inputed", "info")
     } else {
