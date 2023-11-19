@@ -23,7 +23,7 @@ const Cards = ({
         </div>
         <div className="flex flex-col gap-y-[0.2rem] justify-center items-center border-b border-gray-300">
           <h2>Interest Rate</h2>
-          <p className="text-grey-500 ">&#8358; {interestRate}</p>
+          <p className="text-grey-500 ">{interestRate}%</p>
         </div>
         <div className="flex flex-col gap-y-[0.2rem] justify-center items-center border-r border-gray-300">
           <h3>Maintenance</h3>

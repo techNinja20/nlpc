@@ -55,7 +55,7 @@ const SchemeDetails = () => {
           startDate: startDate,
           endDate: endDate,
           name: schemeData.name,
-          total: total,
+          interesrRate: total,
         },
       ])
     }
