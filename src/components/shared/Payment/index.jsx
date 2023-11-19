@@ -2,7 +2,6 @@ import { PaystackButton } from "react-paystack"
 import { Toast } from "../Toastify/toast"
 import { useDatas, useOnChange } from "../Context"
 import Input from "../Input"
-import { useState } from "react"
 
 const PayButton = ({ openModal }) => {
   const { email,  amount} = useDatas()
